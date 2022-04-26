@@ -6,7 +6,7 @@ from tkinter import ttk
 from tkinter import Entry, StringVar, Toplevel, messagebox
 import tkinter.font as tkFont
 from turtle import color
-
+#HOLAAAAAAAAAAAAAAAAAA
 #PARA CREAR LA INTERFAZ GRÁFICA 
 #Creamos la ventana principal 
 ventana = tk.Tk()
