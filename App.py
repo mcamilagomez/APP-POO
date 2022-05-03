@@ -6,8 +6,7 @@ from tkinter import ttk
 from tkinter import Entry, StringVar, Toplevel, messagebox
 import tkinter.font as tkFont
 from turtle import color
-# ahwhGHV<SBD
-# HOLAAAAAAAAAAAAAAAAAA
+
 # PARA CREAR LA INTERFAZ GRÁFICA
 # Creamos la ventana principal
 ventana = tk.Tk()
@@ -17,6 +16,7 @@ Width = 520
 ventana.geometry("918x520+230+100")
 # Título de la ventana principal
 ventana.title("Pc Explorer")
+ventana.resizable(width=0,height=0)
 # Tipo de letra
 Fuente_principal = tkFont.Font(family="Lucida Bright", size=11)
 # Fondos
@@ -42,10 +42,11 @@ Piso3 = tk.PhotoImage(file="piso3.png")
 # Esta clase valida que el usuario no ingrese letras, solo números
 
 
-#Clase código
+# Clase código
 class codigos():
-    def __init__(self, text) :
+    def __init__(self, text):
         self.text = text
+
     def validate_code(text: str):
         return text.isdecimal()
 
@@ -74,7 +75,7 @@ def MainMenu():
                         validatecommand=(ventana.register(codigos.validate_code), "%S"))
     codigoEntry.place(x=473, y=385, width=100, height=30)
     # Abrimos el archivo txt que contiene los códigos estudiantiles
-    filename = ("file/codigos.txt")
+    filename = ("files/codigos.txt")
     with open(filename) as file:
         readfile = file.read()
     # LOGIN
