@@ -52,6 +52,10 @@ def MainMenu():
         def validate_code(text: str):
             return text.isdecimal()
 
+    #Disponibilidad G
+    class Disponibilidad_G():
+        def __init__(self):
+            pass
     # Para resetear la pantalla cuando uno se devuelva al menu principal
     for ele in ventana.winfo_children():
         ele.destroy()
@@ -187,6 +191,15 @@ def Ventana_Opciones():
     Boton_CasaE=tk.Button(ventana, text = "Casa Estudio", width = 7, height = 1, command = Ventana_Pisos_CasaE,
                             image = Casa_Estudio, bg = "#FFFFFF", bd = 1, disabledforeground = None,  relief = "flat")
     Boton_CasaE.place(x = 710, y = 355, width = 200, height = 49)
+    Boton_PisoG = tk.Button(ventana, text="Bloque G", width=7, height=1, font=Fuente_principal, command=Ventana_Disponibilidad_G,
+                            image=Bloque_G, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
+    Boton_PisoG.place(x=490, y=305, width=200, height=49)
+    Boton_Biblioteca = tk.Button(ventana, text="Biblioteca", width=7, height=1,
+                                 image=Biblioteca, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
+    Boton_Biblioteca.place(x=490, y=400, width=200, height=49)
+    Boton_CasaE = tk.Button(ventana, text="Casa Estudio", width=7, height=1, command=Ventana_Pisos_CasaE,
+                            image=Casa_Estudio, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
+    Boton_CasaE.place(x=710, y=355, width=200, height=49)
 
 
 def Ventana_Explicacion():
