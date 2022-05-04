@@ -1,0 +1,10 @@
+Casa estudio,1,true,10
+Casa estudio,2,false,0
+Casa estudio,3,true,5
+Biblioteca,1,true,12
+Bloque B,1,true,6
+Bloque B,2,true,17
+Bloque D,1,true,12
+Bloque G,5,true,8
+Bloque K,4,true,10
+Bloque C,1,false,0

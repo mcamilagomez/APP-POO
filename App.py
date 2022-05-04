@@ -1,13 +1,11 @@
 
-
+from enum import Enum
 # Importamos las librerías para la GUI
 import tkinter as tk
 from tkinter import ttk
 from tkinter import Entry, StringVar, Toplevel, messagebox
 import tkinter.font as tkFont
 from turtle import color
-# ahwhGHV<SBD
-# HOLAAAAAAAAAAAAAAAAAA
 # PARA CREAR LA INTERFAZ GRÁFICA
 # Creamos la ventana principal
 ventana = tk.Tk()
@@ -39,16 +37,38 @@ Piso1 = tk.PhotoImage(file="piso1.png")
 Piso2 = tk.PhotoImage(file="piso2.png")
 Piso3 = tk.PhotoImage(file="piso3.png")
 
-# Esta clase valida que el usuario no ingrese letras, solo números
+    
+class lugares (Enum):
+    CASA_ESTUDIO = "Casa estudio"
+    BIBLIOTECA = "Biblioteca"
+    BLOQUEB = "Bloque B"
+    BLOQUEC = "Bloque C" 
+    BLOQUED = "Bloque D"  
+    BLOQUEG = "Bloque G"
+    BLOQUEK = "Bloque K"
 
+class Lugar:
+  def __init__(self):
+   ubicacion:lugares
+   piso:int
+   cantidad:int
+  def hayDispo():bool
 
-#Clase código
-class codigos():
+class Computador():
+  def __init__(self):
+   ID:int
+   disponibilidad: bool
+   lugar:Lugar
+
+# Esta clase valida que el usuario no ingrese letras, solo números que hacen 
+# referencia  a su código estudiantil
+
+#Clase estudiante
+class estudiante():
     def __init__(self, text) :
         self.text = text
     def validate_code(text: str):
         return text.isdecimal()
-
 
 # PARA CREAR LAS DEMÁS VENTANAS
 # Cada función es un menú
@@ -71,9 +91,10 @@ def MainMenu():
     codigo = StringVar()
     # Aquí se valida lo que el usuario ingresa
     codigoEntry = Entry(ventana, textvariable=codigo, bg="#ECE7E6", width=35, validate="key",
-                        validatecommand=(ventana.register(codigos.validate_code), "%S"))
+                        validatecommand=(ventana.register(estudiante.validate_code), "%S"))
     codigoEntry.place(x=473, y=385, width=100, height=30)
     # Abrimos el archivo txt que contiene los códigos estudiantiles
+    
     filename = ("file/codigos.txt")
     with open(filename) as file:
         readfile = file.read()
@@ -100,8 +121,6 @@ def MainMenu():
     Button_login.place(x=500, y=430)
 
 # Ventana de creditos
-
-
 def Ventana_creditos():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
     for ele in ventana.winfo_children():
@@ -116,7 +135,6 @@ def Ventana_creditos():
     Boton_Regreso = tk.Button(ventana, text="", command=MainMenu, width=7, height=1, font=Fuente_principal,
                               image=Imagen_Regresar_Creditos, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=847, y=449, width=63, height=64)
-
 
 def Ventana_Opciones():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
