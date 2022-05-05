@@ -52,10 +52,6 @@ def MainMenu():
         def validate_code(text: str):
             return text.isdecimal()
 
-    #Disponibilidad G
-    class Disponibilidad_G():
-        def __init__(self):
-            pass
     # Para resetear la pantalla cuando uno se devuelva al menu principal
     for ele in ventana.winfo_children():
         ele.destroy()
@@ -119,8 +115,9 @@ def Ventana_Disponibilidad_G():
     Boton_Regreso = tk.Button(ventana, text="", command=Ventana_Opciones, width=7, height=1, font=Fuente_principal,
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
-
-
+    prueba = Disponibilidad_G()
+    prueba.dispo_pc()
+            
 def Ventana_creditos():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
     for ele in ventana.winfo_children():
@@ -141,10 +138,8 @@ class Disponibilidad_G():
             file = open("file\dispo.txt")
             self.readfile = file.readlines()
  
-        def dispo_pc(self):
-            file = open("file\dispo.txt", "r")
-            readfile = file.readlines()
-            for string in readfile:
+        def dispo_pc(self): 
+            for string in self.readfile:
                 fila = string.split(",")
                 lugar = fila[0]
                 piso = fila[1]
@@ -155,8 +150,6 @@ class Disponibilidad_G():
                         print(cantidad)
 
 def Ventana_Opciones():
-    dispo = Disponibilidad_G()
-    dispo.dispo_pc()
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
     for ele in ventana.winfo_children():
         ele.destroy()
@@ -182,9 +175,6 @@ def Ventana_Opciones():
     Boton_PisoK = tk.Button(ventana, text="Bloque K", width=7, height=1, font=Fuente_principal,
                             image=Bloque_K, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_PisoK.place(x=270, y=400, width=200, height=49)
-    Boton_PisoG = tk.Button(ventana, text="Bloque G", width=7, height=1, font=Fuente_principal, command= dispo.dispo_pc,
-                            image = Bloque_G, bg = "#FFFFFF", bd = 1, disabledforeground = None,  relief = "flat")
-    Boton_PisoG.place(x = 490, y = 305, width = 200, height = 49)
     Boton_Biblioteca=tk.Button(ventana, text = "Biblioteca", width = 7, height = 1,
                                  image = Biblioteca, bg = "#FFFFFF", bd = 1, disabledforeground = None,  relief = "flat")
     Boton_Biblioteca.place(x = 490, y = 400, width = 200, height = 49)
@@ -200,8 +190,7 @@ def Ventana_Opciones():
     Boton_CasaE = tk.Button(ventana, text="Casa Estudio", width=7, height=1, command=Ventana_Pisos_CasaE,
                             image=Casa_Estudio, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_CasaE.place(x=710, y=355, width=200, height=49)
-
-
+    
 def Ventana_Explicacion():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
     for ele in ventana.winfo_children():
@@ -263,8 +252,7 @@ def Ventana_Pisos_CasaE():
     Boton_Piso3=tk.Button(ventana, text = "",  width = 7, height = 1, font = Fuente_principal,
                             image = Piso3, bg = "#FFFFFF", bd = 1, disabledforeground = None,  relief = "flat")
     Boton_Piso3.place(x = 558, y = 345, width = 200, height = 49)
-prueba = Disponibilidad_G()
-prueba.dispo_pc()
+
 MainMenu()
 # El mainloop lleva el registro de todo lo que está sucediendo en la ventana:
 ventana.mainloop()
