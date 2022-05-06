@@ -1,7 +1,6 @@
 # APP-POO
 Programadoras, diseñadoras, gerentes 
--Lena Castillo
--Maria Camila Gomez
+Lena Castillo & Maria Camila Gomez
 
 REQUERIMIENTOS FUNCIONALES
 1. Para nuestro primer requerimiento funcional implementamos un Login Form Menu, en este caso se valida que el usuario haya rellenado el campo,no se encuentre vacío y además, que sean solo números los datos ingresados, y que estos coincidan con alguno de los códigos estudiantiles que se encuentran en el txt que usamos para simular la base de datos de la universidad. 
