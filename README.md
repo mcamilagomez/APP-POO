@@ -1,5 +1,6 @@
 # APP-POO
 Programadoras, diseñadoras, gerentes 
+
 Lena Castillo & Maria Camila Gomez
 
 REQUERIMIENTOS FUNCIONALES
