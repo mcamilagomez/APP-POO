@@ -7,4 +7,4 @@ REQUERIMIENTOS FUNCIONALES
 
 COMO PROBAR EL CÓDIGO
 
-Pueden probar nuestro código descargando el archivo que se encuentra en el repositorio, donde se encuentra la carpeta de las imágenes que se utilizaron y el código usado, que se desarrolló usando Tkinter, y luego corriéndolo en VS Core usando la extensión de Python. A su vez también, podrían descargar el archivo de Python que se encuentra de manera individual y la carpeta llamada imágenes.
+Pueden probar nuestro código descargando el archivo que se encuentra en el repositorio, donde se encuentra las imágenes qy el código usado, que se desarrolló usando Tkinter para la GUI, y luego corriéndolo en VS Code usando la extensión de Python. 
