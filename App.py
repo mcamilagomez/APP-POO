@@ -1,5 +1,6 @@
 from enum import Enum
 # Importamos las librerías para la GUI
+from tkinter import *
 import tkinter as tk
 from tkinter import Label, Tk, ttk
 from tkinter import Entry, StringVar, Toplevel, messagebox
@@ -44,23 +45,32 @@ Disponibles_G = tk.PhotoImage(file="disponibles.png")
 # Cada función es un menú
 
 
-class Disponibilidad_G():
+class Disponibilidad_G(Frame):
+    
     def __init__(self):
-
         file = open("file\dispo.txt")
         self.readfile = file.readlines()
 
     def dispo_pc(self):
         for string in self.readfile:
-            self.fila = string.split(",")
-            self.lugar = self.fila[0]
-            self.piso = self.fila[1]
-            self.disponibilidad = self.fila[2]
-            self.cantidad = int(self.fila[3])
-            if (self.lugar == "Bloque G"):
-                if (self.disponibilidad == "true"):  # aqui se coloca lo del boton
-                    label3 = tk.Label(Ventana_Disponibilidad_G, text="")
-                    label3.pack(x=558, y=345, width=200, height=49)
+            fila = string.split(",")
+            lugar = fila[0]
+            piso = fila[1]
+            disponibilidad = fila[2]
+            cantidad = fila[3]
+            
+            if (lugar == "Bloque G"): 
+                
+                if (disponibilidad == "true"):  # aqui se coloca lo del boton
+                    
+                    #print(cantidad)
+                    #1. Estabas tratando de abrir una ventan en un label, so k mor?
+                    #2. Para la ubicación es .place
+                    #Solución, primero abro la ventana y luego mando el label
+                    #Segundo pues pongo el place JAJAJJAJA, Mira lo que me mostraste
+                    Ventana_Disponibilidad_G
+                    label3 = tk.Label(text=cantidad)
+                    label3.place(x=558, y=345, width=200, height=49)
 
 
 def MainMenu():
