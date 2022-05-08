@@ -18,8 +18,11 @@ ventana.geometry("918x520+230+100")
 # Título de la ventana principal
 ventana.title("Pc Explorer")
 ventana.resizable(width=0, height=0)
-# Tipo de letra
+# Tipo de letra de los botones en las pantallas
 Fuente_principal = tkFont.Font(family="Lucida Bright", size=11)
+# Tipo de letra de la disponibilidad en las pantallas
+Fuente_Disponibilidad = tkFont.Font(family="Lucida Bright", size=30)
+Fuente_Disponibilidad_Preguntas = tkFont.Font(family="Lucida Bright", size=18)
 # Fondos
 imagen = tk.PhotoImage(file="pp.png")
 fondo = tk.Label(ventana, image=imagen).place(x=0, y=0)
@@ -46,7 +49,7 @@ Disponibles_G = tk.PhotoImage(file="disponibles.png")
 
 
 class Disponibilidad(Frame):
-    
+
     def __init__(self):
         file = open("file\dispo.txt")
         self.readfile = file.readlines()
@@ -58,19 +61,20 @@ class Disponibilidad(Frame):
             piso = fila[1]
             disponibilidad = fila[2]
             cantidad = fila[3]
-            
-            if (lugar == "Bloque G"): 
-                
+
+            if (lugar == "Bloque G"):
+
                 if (disponibilidad == "true"):  # aqui se coloca lo del boton
-                    
-                    #print(cantidad)
-                    #1. Estabas tratando de abrir una ventan en un label, so k mor?
-                    #2. Para la ubicación es .place
-                    #Solución, primero abro la ventana y luego mando el label
-                    #Segundo pues pongo el place JAJAJJAJA, Mira lo que me mostraste
+
+                    # print(cantidad)
+                    # 1. Estabas tratando de abrir una ventan en un label, so k mor?
+                    # 2. Para la ubicación es .place
+                    # Solución, primero abro la ventana y luego mando el label
+                    # Segundo pues pongo el place JAJAJJAJA, Mira lo que me mostraste
                     Ventana_Disponibilidad_G
-                    label3 = tk.Label(text=cantidad)
-                    label3.place(x=558, y=345, width=200, height=49)
+                    label3 = tk.Label(text=cantidad, bg="#FFFFFF",
+                                      font=Fuente_Disponibilidad)
+                    label3.place(x=254, y=340, width=50, height=75)
 
 
 def MainMenu():
@@ -146,7 +150,12 @@ def Ventana_Disponibilidad_G():
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     prueba = Disponibilidad()
     prueba.dispo_pc()
-    
+    label4 = tk.Label(interfazG, text="¿Deseas reservar un computador?",
+                      bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
+    label4.place(x=420, y=300)
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+                              bg="#FFFFFF",disabledforeground=None)
+    Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
 
 def Ventana_creditos():
