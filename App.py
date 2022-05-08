@@ -45,7 +45,7 @@ Disponibles_G = tk.PhotoImage(file="disponibles.png")
 # Cada función es un menú
 
 
-class Disponibilidad_G(Frame):
+class Disponibilidad(Frame):
     
     def __init__(self):
         file = open("file\dispo.txt")
@@ -144,7 +144,7 @@ def Ventana_Disponibilidad_G():
     Boton_Regreso = tk.Button(ventana, text="", command=Ventana_Opciones, width=7, height=1, font=Fuente_principal,
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
-    prueba = Disponibilidad_G()
+    prueba = Disponibilidad()
     prueba.dispo_pc()
     
 
