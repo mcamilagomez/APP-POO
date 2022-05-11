@@ -1,5 +1,3 @@
-from re import A
-
 
 lugar_seleccionado = "Biblioteca"
 piso_seleccionado = "1"
