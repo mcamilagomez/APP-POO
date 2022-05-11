@@ -117,7 +117,6 @@ def MainMenu():
                              height=1, command=login, font=Fuente_principal)
     Button_login.place(x=500, y=430)
 
-
 def Ventana_Disponibilidad_B_2():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
     for ele in ventana.winfo_children():
@@ -133,15 +132,19 @@ def Ventana_Disponibilidad_B_2():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "2"
+    bloque = "Bloque B"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_B_2,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    def Reserva(): 
+        print("reserva")
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
+   
 
 
 def Ventana_Disponibilidad_B_1():
@@ -159,9 +162,10 @@ def Ventana_Disponibilidad_B_1():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "1"
+    bloque = "Bloque B"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_B_1,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
@@ -185,9 +189,10 @@ def Ventana_Disponibilidad_CasaE_3():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "3"
+    bloque = "Casa estudio"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_CasaE_3,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
@@ -211,9 +216,10 @@ def Ventana_Disponibilidad_CasaE_2():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "2"
+    bloque = "Casa estudio"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_CasaE_2,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
@@ -237,9 +243,10 @@ def Ventana_Disponibilidad_CasaE_1():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "1"
+    bloque = "Casa estudio"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_CasaE_1,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
@@ -263,9 +270,10 @@ def Ventana_Disponibilidad_Biblioteca():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "1"
+    bloque = "Biblioteca"
     computadores = Disponibilidad()
     computadores.disponible(
-        Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, piso)
+        Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
@@ -289,9 +297,10 @@ def Ventana_Disponibilidad_C():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "1"
+    bloque = "Bloque C"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_C,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
@@ -315,9 +324,10 @@ def Ventana_Disponibilidad_k():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "4"
+    bloque = "Bloque K"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_k,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
@@ -341,9 +351,10 @@ def Ventana_Disponibilidad_G():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "5"
+    bloque = "Bloque G"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_G,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
 
     label4 = tk.Label(interfazG, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
@@ -368,9 +379,10 @@ def Ventana_Disponibilidad_D():
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
     piso = "1"
+    bloque = "Bloque D"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_D,
-                            Fuente_Disponibilidad, piso)
+                            Fuente_Disponibilidad, piso, bloque)
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)

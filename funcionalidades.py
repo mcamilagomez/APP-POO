@@ -15,7 +15,7 @@ class Disponibilidad(Frame):
         file = open("file\dispo.txt")
         self.readfile = file.readlines()
 
-    def disponible(self, ventana, fuente, pisoBloque):
+    def disponible(self, ventana, fuente, pisoBloque, Bloque):
         for string in self.readfile:
             fila = string.split(",")
             lugar = fila[0]
@@ -23,7 +23,8 @@ class Disponibilidad(Frame):
             disponibilidad = fila[2]
             cantidad = fila[3]
             self.pisoBloque = pisoBloque
-            if (lugar == "Bloque G" and piso == pisoBloque):
+            self.Bloque = Bloque
+            if (lugar == Bloque and piso == pisoBloque):
                 if (disponibilidad == "true"):  # aqui se coloca lo del boton
                     # print(cantidad)
                     # 1. Estabas tratando de abrir una ventan en un label, so k mor?
