@@ -65,11 +65,23 @@ Bloque_B_2 = tk.PhotoImage(file="disB2.png") #Fondo de disponibilidad de Bloque 
 # Cada función es un menú
 
 
+
+ 
+
 def MainMenu():
     # Esta clase valida que el usuario no ingrese letras, solo números que hacen
     # referencia  a su código estudiantil
+<<<<<<< Updated upstream
 
     prueba = Estudiantes(text)
+=======
+    class codigos():
+        def __init__(self, text):
+            self.text = text
+
+        def validate_code(text: str):
+            return text.isdecimal()
+>>>>>>> Stashed changes
 
     # Para resetear la pantalla cuando uno se devuelva al menu principal
     for ele in ventana.winfo_children():
