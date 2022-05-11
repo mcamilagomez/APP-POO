@@ -34,7 +34,8 @@ class Disponibilidad(Frame):
                     label3 = tk.Label(text=cantidad, bg="#FFFFFF",
                                       font=fuente)
                     label3.place(x=254, y=340, width=50, height=75)
-                else:
+            else:
+                if (lugar!="Bloque G" and piso!=pisoBloque):
                     ventana
                     label4 = tk.Label(text="0", bg="#FFFFFF",
                                       font=fuente)
