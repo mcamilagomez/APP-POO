@@ -139,13 +139,15 @@ def Ventana_Disponibilidad_B_2():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    def Reserva(): 
-        print("reserva")
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva,
+    
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=ReservaB2,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
    
-
+def ReservaB2():
+    with open("file\dispo.txt", "r+"):
+        pass
+    Ventana_Disponibilidad_B_2()
 
 def Ventana_Disponibilidad_B_1():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
