@@ -1,20 +1,28 @@
+from re import A
+
+
 lugar_seleccionado = "Biblioteca"
 piso_seleccionado = "1"
 fila = []
+a=open("file/dispo.txt")
+print(a.readlines)
+readfile = a.readlines()
+newfile = ""
 
-with open ("file/dispo.txt") as file:
-    readfile = file.readlines()
-     
 for string in readfile:
-    fila = string.split(",")
+    fila = string.strip().split(",")
     lugar = fila[0]
     piso = fila[1]
     disponibilidad = fila[2]
-    cantidad = fila[3]
-    if ((lugar == lugar_seleccionado)and(piso == piso_seleccionado)):
-        if (disponibilidad=="true"):
-            print(cantidad)
-    
-
-
+    cantidad = int(fila[3])
+    if (lugar == lugar_seleccionado)and(piso == piso_seleccionado)and(disponibilidad=="true"):
+        nuevacantidad = cantidad - 1
+        newfile += f"{lugar},{piso},{disponibilidad},{nuevacantidad}\n"
+    else:
+        newfile += f"{lugar},{piso},{disponibilidad},{cantidad}\n"
         
+a.close()
+
+a=open("file/dispo.txt", "w")
+a.write(newfile)
+a.close()
