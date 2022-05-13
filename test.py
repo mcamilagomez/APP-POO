@@ -24,3 +24,8 @@ a.close()
 a=open("file/dispo.txt", "w")
 a.write(newfile)
 a.close()
+
+archivo = open("file/reser.txt", "a")
+archivo.write("14\n")
+archivo.close()
+

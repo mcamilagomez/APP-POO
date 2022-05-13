@@ -1,14 +1,16 @@
+import random
+import tkinter
+import tkinter as tk
+import tkinter.font as tkFont
 from cgitb import text
+from datetime import datetime
 from enum import Enum
 # Importamos las librerías para la GUI
 from tkinter import *
-import tkinter as tk
-from tkinter import Label, Tk, ttk
-from tkinter import Entry, StringVar, Toplevel, messagebox
-import tkinter
-import tkinter.font as tkFont
-from turtle import color
+from tkinter import Entry, Label, StringVar, Tk, Toplevel, messagebox, ttk
 from tkinter.__init__ import Label
+from turtle import color
+
 from funcionalidades import *
 
 # PARA CREAR LA INTERFAZ GRÁFICA
@@ -29,37 +31,63 @@ Fuente_principal = tkFont.Font(family="Lucida Bright", size=11)
 Fuente_Disponibilidad = tkFont.Font(family="Lucida Bright", size=30)
 # tipo de letras de las preguntas de disponibilida en los label
 Fuente_Disponibilidad_Preguntas = tkFont.Font(family="Lucida Bright", size=16)
+Fuente_Comprobante = tkFont.Font(family="Lucida Bright", size=11)
 # Cargamos todas las imagenes que vamos a necesitar en el trabajo
 # Las guardamos en una variable de tipo PhotoImage
 imagen = tk.PhotoImage(file="pp.png")  # Imagen de la pantalla principal
 # Esta imagen la ubicamos en el label principal que será nuestro fondo
 fondo = tk.Label(ventana, image=imagen).place(x=0, y=0)
-credits = tk.PhotoImage(file="credits.png") #Imagen de los créditos
-opciones = tk.PhotoImage(file="opciones.png") #Fondo de interfaz de las opciones
-Explicacion = tk.PhotoImage(file="como funciona.png") #Fondo de la interfaz de explicación
-Imagen_Regresar = tk.PhotoImage(file="boton regresar.png") # Imagen del boton regresar a la pág anterior
-Imagen_Regresar_Creditos = tk.PhotoImage(file="regresar Creditos.png") #Imagen del boton regresar de los créditos
-Fondo_Pisos = tk.PhotoImage(file="pisos.png") #Fondo de la interfaz de los pisos
-Bloque_B = tk.PhotoImage(file="bloqueb.png") #Boton del Bloque B
-Bloque_C = tk.PhotoImage(file="bloquec.png") #Boton del Bloque C
-Bloque_D = tk.PhotoImage(file="bloqued.png") #Boton del Bloque D
-Bloque_K = tk.PhotoImage(file="bloqueK.png") #Boton del Bloque K
-Bloque_G = tk.PhotoImage(file="bloqueg.png") #Boton del Bloque G
-Biblioteca = tk.PhotoImage(file="biblioteca.png") #Boton de Biblioteca
-Casa_Estudio = tk.PhotoImage(file="casaestudio.png") #Boton de CasaEstudio
-Piso1 = tk.PhotoImage(file="piso1.png") #Boton de los pisos del Bloque B y Casa Estudio 
-Piso2 = tk.PhotoImage(file="piso2.png") #Boton de los pisos del Bloque B y Casa Estudio 
-Piso3 = tk.PhotoImage(file="piso3.png") #Boton de los pisos del Bloque B y Casa Estudio 
-Disponibles_G = tk.PhotoImage(file="disponibles.png") #Fondo de disponibilidad del bloque G
-Disponibles_D = tk.PhotoImage(file="disD.png") #Fondo de disponibilidad del bloque D
-Disponibles_K = tk.PhotoImage(file="disK.png") #Fondo de disponibilidad del bloque K
-Disponibles_C = tk.PhotoImage(file="disC.png") #Fondo de disponibilidad del bloque C
-Disponibles_Biblioteca = tk.PhotoImage(file="disbib.png") #Fondo de disponibilidad de Biblioteca
-Disponibles_CasaE_1 = tk.PhotoImage(file="disCasa1.png") #Fondo de disponibilidad de CasaEstudio piso 1
-Disponibles_CasaE_2 = tk.PhotoImage(file="disCasa2.png") #Fondo de disponibilidad de CasaEstudio piso 2
-Disponibles_CasaE_3 = tk.PhotoImage(file="disCasa3.png") #Fondo de disponibilidad de CasaEstudio piso 3
-Bloque_B_1 = tk.PhotoImage(file="disB1.png") #Fondo de disponibilidad de Bloque B piso 1
-Bloque_B_2 = tk.PhotoImage(file="disB2.png") #Fondo de disponibilidad de Bloque B piso 2
+credits = tk.PhotoImage(file="credits.png")  # Imagen de los créditos
+# Fondo de interfaz de las opciones
+opciones = tk.PhotoImage(file="opciones.png")
+# Fondo de la interfaz de explicación
+Explicacion = tk.PhotoImage(file="como funciona.png")
+# Imagen del boton regresar a la pág anterior
+Imagen_Regresar = tk.PhotoImage(file="boton regresar.png")
+# Imagen del boton regresar de los créditos
+Imagen_Regresar_Creditos = tk.PhotoImage(file="regresar Creditos.png")
+# Fondo de la interfaz de los pisos
+Fondo_Pisos = tk.PhotoImage(file="pisos.png")
+Bloque_B = tk.PhotoImage(file="bloqueb.png")  # Boton del Bloque B
+Bloque_C = tk.PhotoImage(file="bloquec.png")  # Boton del Bloque C
+Bloque_D = tk.PhotoImage(file="bloqued.png")  # Boton del Bloque D
+Bloque_K = tk.PhotoImage(file="bloqueK.png")  # Boton del Bloque K
+Bloque_G = tk.PhotoImage(file="bloqueg.png")  # Boton del Bloque G
+Biblioteca = tk.PhotoImage(file="biblioteca.png")  # Boton de Biblioteca
+Casa_Estudio = tk.PhotoImage(file="casaestudio.png")  # Boton de CasaEstudio
+# Boton de los pisos del Bloque B y Casa Estudio
+Piso1 = tk.PhotoImage(file="piso1.png")
+# Boton de los pisos del Bloque B y Casa Estudio
+Piso2 = tk.PhotoImage(file="piso2.png")
+# Boton de los pisos del Bloque B y Casa Estudio
+Piso3 = tk.PhotoImage(file="piso3.png")
+# Fondo de disponibilidad del bloque G
+Disponibles_G = tk.PhotoImage(file="disponibles.png")
+# Fondo de disponibilidad del bloque D
+Disponibles_D = tk.PhotoImage(file="disD.png")
+# Fondo de disponibilidad del bloque K
+Disponibles_K = tk.PhotoImage(file="disK.png")
+# Fondo de disponibilidad del bloque C
+Disponibles_C = tk.PhotoImage(file="disC.png")
+# Fondo de disponibilidad de Biblioteca
+Disponibles_Biblioteca = tk.PhotoImage(file="disbib.png")
+# Fondo de disponibilidad de CasaEstudio piso 1
+Disponibles_CasaE_1 = tk.PhotoImage(file="disCasa1.png")
+# Fondo de disponibilidad de CasaEstudio piso 2
+Disponibles_CasaE_2 = tk.PhotoImage(file="disCasa2.png")
+# Fondo de disponibilidad de CasaEstudio piso 3
+Disponibles_CasaE_3 = tk.PhotoImage(file="disCasa3.png")
+# Fondo de disponibilidad de Bloque B piso 1
+Bloque_B_1 = tk.PhotoImage(file="disB1.png")
+# Fondo de disponibilidad de Bloque B piso 2
+Bloque_B_2 = tk.PhotoImage(file="disB2.png")
+# Comprobante = tk.PhotoImage(file="reserva.png") #Fondo de la reserva de los computadores
+# Fondo de la reserva de los computadores
+Comprobante = tk.PhotoImage(file="com.png")
+now = datetime.now()
+hora = str(now.hour)
+minuto = str(now.minute)
+segundo = str(now.second)
 
 # PARA CREAR LAS DEMÁS VENTANAS
 # Cada función es un menú
@@ -67,10 +95,7 @@ Bloque_B_2 = tk.PhotoImage(file="disB2.png") #Fondo de disponibilidad de Bloque 
 
 def MainMenu():
     # Esta clase valida que el usuario no ingrese letras, solo números que hacen
-    # referencia  a su código estudiantil
-
-    prueba = Estudiantes(text)
-
+    # referencia  a su código
     # Para resetear la pantalla cuando uno se devuelva al menu principal
     for ele in ventana.winfo_children():
         ele.destroy()
@@ -91,22 +116,27 @@ def MainMenu():
     codigoEntry = Entry(ventana, textvariable=codigo, bg="#ECE7E6", width=35, validate="key",
                         validatecommand=(ventana.register(Estudiantes.validate_code), "%S"))
     codigoEntry.place(x=473, y=385, width=100, height=30)
-
     # LOGIN
+
     def login():
         # Validar que el campo no este vacío
+        global Validar_codigo
         Validar_codigo = codigoEntry.get()
         if(Validar_codigo == ""):
             Error = tk.Label(ventana, text="Error, campos vacíos, intente de nuevo.",
                              font=Fuente_principal, disabledforeground=None, bg="#FFFFFF")
             Error.place(x=600, y=385)
         else:  # si no esta vacío entonces se muestra la otra interfaz
-            if Validar_codigo in readfile:
-                Ventana_Opciones()
-            else:
-                Error = tk.Label(ventana, text="Error, código no encontrado.",
+            if (int(Validar_codigo) < 1000000):
+                    Error = tk.Label(ventana, text="Error, código no encontrado.",
                                  font=Fuente_principal, disabledforeground=None, bg="#FFFFFF")
-                Error.place(x=600, y=385)
+                    Error.place(x=600, y=385)
+            else: 
+                 if(Validar_codigo in readfile):
+                     Ventana_Opciones()
+           
+        return Validar_codigo
+
     # Abrimos el archivo txt que contiene los códigos estudiantiles
     filename = ("file/codigos.txt")
     with open(filename) as file:
@@ -116,6 +146,18 @@ def MainMenu():
     Button_login = tk.Button(ventana, text="Acceder", width=7,
                              height=1, command=login, font=Fuente_principal)
     Button_login.place(x=500, y=430)
+
+
+def Reserva_Bloque_B_2():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Bloque B", "2")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Bloque B, segundo piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
+
 
 def Ventana_Disponibilidad_B_2():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -131,23 +173,28 @@ def Ventana_Disponibilidad_B_2():
     Boton_Regreso = tk.Button(ventana, text="", command=Ventana_Opciones, width=7, height=1, font=Fuente_principal,
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
-    piso = "2"
-    bloque = "Bloque B"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_B_2,
-                            Fuente_Disponibilidad, piso, bloque)
+                            Fuente_Disponibilidad, "2", "Bloque B")
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=ReservaB2,
+
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Bloque_B_2,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
-   
-def ReservaB2():
-    with open("file\dispo.txt", "r+"):
-        pass
-    Ventana_Disponibilidad_B_2()
+
+
+def Reserva_BLoque_B_1():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Bloque B", "1")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Bloque B, primer piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
+
 
 def Ventana_Disponibilidad_B_1():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -163,18 +210,25 @@ def Ventana_Disponibilidad_B_1():
     Boton_Regreso = tk.Button(ventana, text="", command=Ventana_Opciones, width=7, height=1, font=Fuente_principal,
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
-    piso = "1"
-    bloque = "Bloque B"
     computadores = Disponibilidad()
     computadores.disponible(Ventana_Disponibilidad_B_1,
-                            Fuente_Disponibilidad, piso, bloque)
+                            Fuente_Disponibilidad, "1", "Bloque B")
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_BLoque_B_1,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Casa_E_3():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Casa estudio", "3")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Casa Estudio, tercer piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_CasaE_3():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -198,10 +252,19 @@ def Ventana_Disponibilidad_CasaE_3():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Casa_E_3,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Casa_E_2():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Casa estudio", "2")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Casa Estudio, segundo piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_CasaE_2():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -225,10 +288,19 @@ def Ventana_Disponibilidad_CasaE_2():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Casa_E_2,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Casa_E_1():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Casa estudio", "1")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Casa Estudio, primer piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_CasaE_1():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -252,10 +324,21 @@ def Ventana_Disponibilidad_CasaE_1():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=340)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Casa_E_1,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+
+def Reserva_Biblioteca():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Biblioteca", "1")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Biblioteca, primer piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
+  
 
 def Ventana_Disponibilidad_Biblioteca():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -271,18 +354,26 @@ def Ventana_Disponibilidad_Biblioteca():
     Boton_Regreso = tk.Button(ventana, text="", command=Ventana_Opciones, width=7, height=1, font=Fuente_principal,
                               image=Imagen_Regresar, bg="#FFFFFF", bd=1, disabledforeground=None,  relief="flat")
     Boton_Regreso.place(x=830, y=430, width=74, height=70)
-    piso = "1"
-    bloque = "Biblioteca"
     computadores = Disponibilidad()
     computadores.disponible(
-        Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, piso, bloque)
+        Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, "1", "Biblioteca")
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Biblioteca,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Bloque_C_1():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Bloque C", "1")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Bloque C, primer piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_C():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -306,10 +397,19 @@ def Ventana_Disponibilidad_C():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Bloque_C_1,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Bloque_K_4():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Bloque K", "4")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Bloque K, cuarto piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_k():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -333,10 +433,19 @@ def Ventana_Disponibilidad_k():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command= Reserva_Bloque_K_4,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Bloque_G_5():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Bloque G", "5")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Bloque G, quinto piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_G():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -361,10 +470,19 @@ def Ventana_Disponibilidad_G():
     label4 = tk.Label(interfazG, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command= Reserva_Bloque_G_5,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
+def Reserva_Bloque_D_1():
+    numero = random.randint(100000, 999999)
+    archivo = open("file/reser.txt", "a")
+    nreserva = str(numero)
+    archivo.write(nreserva +"\n")
+    archivo.close()
+    reserva = Reserva("Bloque D", "1")
+    reserva.Res(Ventana_Disponibilidad_Biblioteca, Fuente_Disponibilidad, Comprobante, "Bloque D, primer piso", now.date(
+    ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, numero )
 
 def Ventana_Disponibilidad_D():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
@@ -388,7 +506,7 @@ def Ventana_Disponibilidad_D():
     label4 = tk.Label(interfaz, text="¿Deseas reservar un computador?",
                       bg="#FFFFFF", font=Fuente_Disponibilidad_Preguntas)
     label4.place(x=420, y=300)
-    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal,
+    Boton_Reserva = tk.Button(ventana, text="Hacer reserva", width=7, height=10, font=Fuente_principal, command=Reserva_Bloque_D_1,
                               bg="#FFFFFF", disabledforeground=None)
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
 
@@ -514,4 +632,5 @@ def Ventana_Pisos_CasaE():
 
 MainMenu()
 # El mainloop lleva el registro de todo lo que está sucediendo en la ventana:
+
 ventana.mainloop()
