@@ -112,8 +112,24 @@ segundo = str(now.second)
 #este es el método del menú principal, todo lo que se encuentra aquí es lo 
 # que se muestra en la pantalla principal de la aplicación.
 def MainMenu():
+<<<<<<< Updated upstream
     # Este for es el encargado de resetear la pantalla en la que el usuario 
     # se encuentra cuando uno se devuelva al menu principal
+=======
+    # Esta clase valida que el usuario no ingrese letras, solo números que hacen
+    # referencia  a su código estudiantil
+
+    prueba = Estudiantes(text)
+    class codigos():
+        def __init__(self, text):
+            self.text = text
+
+        def validate_code(text: str):
+            return text.isdecimal()
+
+
+    # Para resetear la pantalla cuando uno se devuelva al menu principal
+>>>>>>> Stashed changes
     for ele in ventana.winfo_children():
         #Quiere decir que se destruye la imagen
         ele.destroy()
@@ -244,6 +260,7 @@ def Ventana_Disponibilidad_B_2():
     computadores.disponible(Ventana_Disponibilidad_B_2,
                             Fuente_Disponibilidad, "2", "Bloque B", Fuente_No_Disponible)
    
+<<<<<<< Updated upstream
 
 def Reserva_BLoque_B_1():
     #Generamos un número random que sería el número de referencia del comprobante de reserva
@@ -257,6 +274,8 @@ def Reserva_BLoque_B_1():
     reserva.Res(Ventana_Disponibilidad_B_1, Fuente_Disponibilidad, Comprobante, "Bloque B, primer piso", now.date(
     ), hora + ":" + minuto + ":" + segundo, Fuente_Comprobante, Validar_codigo, nreserva )
 
+=======
+>>>>>>> Stashed changes
 def Ventana_Disponibilidad_B_1():
     # Destruye o resetea todo lo que se encuentra en la ventana anterior
     for ele in ventana.winfo_children():
