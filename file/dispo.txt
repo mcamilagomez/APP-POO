@@ -5,3 +5,6 @@ Biblioteca,1,true,6
 Bloque B,1,true,4
 Bloque B,2,false,0
 Bloque D,1,true,11
+Bloque G,5,true,7
+Bloque K,4,true,10
+Bloque C,1,false,0
