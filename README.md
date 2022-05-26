@@ -1,5 +1,7 @@
 # APP-POO
-Programadoras, diseñadoras, gerentes: Lena Castillo & Maria Camila Gomez
+Programadoras, diseñadoras, gerentes.
+- Lena Castillo
+- Maria Camila Gomez
 
 ## Requerimientos funcionales
 - Validación de datos: El programa le pedirá al usuario que valide su identidad como estudiante UniNorte, ingresando su código estudiantil.
