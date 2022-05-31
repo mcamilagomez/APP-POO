@@ -20,7 +20,7 @@ Programadoras, diseñadoras, gerentes.
 ## ¿Cómo probar el código?
 
 ### Requisitos
-Debe tener instalado en su computador.
+Debe tener instalado en su computador:
 - [x] Visual Studio Code.
 - [ ] Además, recuerda instalar las extensiones de SSH remote: `Remote - SSH: Editing Configuration`, `SSH Remote`, `Remote - Containers`, `Remote Development`.
 - [x] Python 3.10, selecciónelo en Visual Studio Code como Interpreter de Python.
