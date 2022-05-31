@@ -19,4 +19,10 @@ Programadoras, diseñadoras, gerentes.
 
 ## ¿Cómo probar el código?
 
-Pueden probar nuestro código descargando el archivo que se encuentra en el repositorio, donde se encuentra las imágenes qy el código usado, que se desarrolló usando Tkinter para la GUI, y luego corriéndolo en VS Code usando la extensión de Python. 
+### Requisitos
+Debe tener instalado en su computador.
+1. `texto que vayas a agregar`
+  - Un vez instalado, 
+-Python 3.10
+Puede probar nuestro código clonando el repositorio, Ctrl + Shit + P (recuerde que debe instalar las extensiones de SSH Remote), una vez
+descargando los archivo que se encuentra en el repositorio, donde se encuentra las imágenes qy el código usado, que se desarrolló usando Tkinter para la GUI, y luego corriéndolo en VS Code usando la extensión de Python. 
