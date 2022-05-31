@@ -1,4 +1,4 @@
-# APP-POO
+# APP-POO: PC EXPLORER
 Programadoras, diseñadoras, gerentes.
 - Lena Castillo.
 - Maria Camila Gómez.
