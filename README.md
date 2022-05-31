@@ -21,9 +21,9 @@ Programadoras, diseñadoras, gerentes.
 
 ### Requisitos
 Debe tener instalado en su computador.
-- [x] Visual Studio Code
-- [ ] Además, recuerda instalar las extensiones de SSH remote: `Remote - SSH: Editing Configuration`, `SSH Remote`, `Remote - Containers`, `Remote Development`
-- [x] Python 3.10
+- [x] Visual Studio Code.
+- [ ] Además, recuerda instalar las extensiones de SSH remote: `Remote - SSH: Editing Configuration`, `SSH Remote`, `Remote - Containers`, `Remote Development`.
+- [x] Python 3.10, selecciónelo en Visual Studio Code como Interpreter de Python.
 
 Una vez hecho esto, puede probar nuestro código clonando el repositorio, Ctrl + Shit + P, clonado el repositorio podrá usar nuestra app de escritorio a la perfección.
  
