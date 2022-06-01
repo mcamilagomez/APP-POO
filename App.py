@@ -116,8 +116,24 @@ segundo = str(now.second)
 
 
 def MainMenu():
+<<<<<<< Updated upstream
     # Este for es el encargado de resetear la pantalla en la que el usuario
     # se encuentra cuando uno se devuelva al menu principal
+=======
+    # Esta clase valida que el usuario no ingrese letras, solo números que hacen
+    # referencia  a su código estudiantil
+
+    prueba = Estudiantes(text)
+    class codigos():
+        def __init__(self, text):
+            self.text = text
+
+        def validate_code(text: str):
+            return text.isdecimal()
+
+
+    # Para resetear la pantalla cuando uno se devuelva al menu principal
+>>>>>>> Stashed changes
     for ele in ventana.winfo_children():
         # Quiere decir que se destruye la imagen
         ele.destroy()
@@ -268,6 +284,7 @@ def Ventana_Disponibilidad_B_2():
                               bg="#FFFFFF", disabledforeground=None)
     # Ubicación (x,y) del botón y ancho, alto
     Boton_Reserva.place(x=560, y=400, width=110, height=50)
+<<<<<<< Updated upstream
     # Creamos un obejto de la clase de disponibilidad que muestra la disponibilidad de los computadores
     # en el lugar que el usuario escoja
     computadores = Disponibilidad()
@@ -299,6 +316,9 @@ def Reserva_BLoque_B_1():
 # En este método se encuentra todo lo relacionado con el Bloque B piso 1, ya sea interfaz o disponibilidad
 
 
+=======
+   
+>>>>>>> Stashed changes
 def Ventana_Disponibilidad_B_1():
     # Este for es el encargado de resetear la pantalla en la que el usuario
     # se encontraba anteriormente y poder mostrar la actual
