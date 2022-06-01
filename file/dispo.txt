@@ -1,8 +1,8 @@
 Casa estudio,1,true,9
 Casa estudio,2,false,0
-Casa estudio,3,true,5
-Biblioteca,1,true,6
-Bloque B,1,true,4
+Casa estudio,3,true,20
+Biblioteca,1,true,4
+Bloque B,1,true,2
 Bloque B,2,false,0
 Bloque D,1,true,11
 Bloque G,5,true,7
