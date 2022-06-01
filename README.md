@@ -26,6 +26,7 @@ Debe tener instalado en su computador:
 - [x] Python 3.10, selecciónelo en Visual Studio Code como Interpreter de Python.
 
 Una vez hecho esto, puede probar nuestro código clonando el repositorio, Ctrl + Shit + P, clonado el repositorio podrá usar nuestra app de escritorio a la perfección.
+
 NOTA: Recuerda que para poder ingresar debe colocar un código válido.
       Por ejemplo: 200159176
  
